@@ -406,7 +406,7 @@ body.futurista #switch-theme:hover {
     display: flex;
     flex-direction: column;     /* Apilar logo/nav/botón */
     align-items: center;        /* Centrar horizontalmente */
-    justify-content: center;    /* Centrar verticalmente dentro */
+    justify-content: space-between;    /* Centrar verticalmente dentro */
     padding: 20px;              /* Aire interno */
     background-color: rgba(0,0,0,0.85);
   }
