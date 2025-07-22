@@ -401,7 +401,7 @@ body.futurista #switch-theme:hover {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   header {
     display: flex;
     flex-direction: column;     /* Apilar logo/nav/botón */
