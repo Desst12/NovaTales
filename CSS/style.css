@@ -360,34 +360,6 @@ body.futurista #switch-theme:hover {
 
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;         
-    align-items: center;
-    padding: 15px 20px;            
-  }
-
-  .logo {
-    margin-bottom: 15px;            
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;         
-    align-items: center;
-    gap: 12px;                      
-    margin: 0;
-    padding: 0;
-  }
-
-  #switch-theme {
-    margin-top: 15px;               
-  }
-}
-
-
 @media (max-width: 480px) {
   .hero {
     height: 70vh;
@@ -427,4 +399,52 @@ body.futurista #switch-theme:hover {
     font-size: 1rem; 
   }
 
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;     /* Apilar logo/nav/botón */
+    align-items: center;        /* Centrar horizontalmente */
+    justify-content: center;    /* Centrar verticalmente dentro */
+    padding: 20px;              /* Aire interno */
+    background-color: rgba(0,0,0,0.85);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;        /* Espacio debajo del logo */
+  }
+
+  .logo img {
+    height: 60px;               /* Logo más grande en móvil */
+    width: auto;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;     /* Enlaces uno debajo del otro */
+    align-items: center;        /* Centrar enlaces */
+    gap: 15px;                  /* Espacio entre enlaces */
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;          /* Tamaño cómodo de lectura */
+    padding: 8px 0;
+    display: block;
+  }
+
+  #switch-theme {
+    margin-top: 20px;           /* Espacio del botón respecto al nav */
+    align-self: center;
+  }
 }
