@@ -34,11 +34,6 @@ header .header-container {
   gap: 10px;
 }
 
-.logo img {
-  height: 40px; 
-  width: auto;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -224,6 +219,10 @@ body.futurista .logo {
   color: #00f0ff;
 }
 
+body.futurista nav a:hover {
+     color: #00c0ff;
+  }
+
 /* Títulos */
 body.futurista h1,
 body.futurista h2,
@@ -333,16 +332,10 @@ body.futurista #switch-theme:hover {
   /* Logo y texto centrados */
   .logo {
     display: flex;
-    flex-direction: column; /* Imagen arriba, texto abajo */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px; /* separación del nav */
-  }
-
-  .logo img {
-    height: 50px; /* tamaño más pequeño del logo */
-    width: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px; 
   }
 
   .logo-text {
@@ -351,12 +344,12 @@ body.futurista #switch-theme:hover {
     text-align: center;
   }
 
-  /* Menú apilado y centrado */
+
   nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* espacio entre items */
+    gap: 12px; 
     margin: 0;
     padding: 0;
   }
@@ -366,7 +359,24 @@ body.futurista #switch-theme:hover {
   }
 
   /* Botón de cambio de tema separado */
+
+  .button {
+    gap: 500px;
+  }
+  
   #switch-theme {
     margin-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-btn {
+    display: inline-block;      /* que se comporte como botón ajustable */
+    max-width: 90%;            /* que nunca se pase del ancho de la pantalla */
+    padding: 10px 15px;        /* un padding más pequeño */
+    font-size: 0.9rem;         /* texto un poco más pequeño en móvil */
+    white-space: normal;       /* PERMITE que el texto salte de línea */
+    word-wrap: break-word;     /* en caso de palabras largas, que se ajusten */
+    text-align: center;        /* centramos el texto */
   }
 }
