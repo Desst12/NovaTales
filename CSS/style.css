@@ -327,6 +327,7 @@ body.futurista #switch-theme:hover {
     justify-content: center;
     padding: 15px 10px;
     background-color: rgba(0,0,0,0.85);
+    gap: 20px;
   }
 
   /* Logo y texto centrados */
@@ -344,7 +345,6 @@ body.futurista #switch-theme:hover {
     text-align: center;
   }
 
-
   nav ul {
     display: flex;
     flex-direction: column;
@@ -359,10 +359,6 @@ body.futurista #switch-theme:hover {
   }
 
   /* Botón de cambio de tema separado */
-
-  .button {
-    gap: 500px;
-  }
   
   #switch-theme {
     margin-top: 12px;
@@ -371,12 +367,12 @@ body.futurista #switch-theme:hover {
 
 @media (max-width: 768px) {
   .cta-btn {
-    display: inline-block;      /* que se comporte como botón ajustable */
-    max-width: 90%;            /* que nunca se pase del ancho de la pantalla */
-    padding: 10px 15px;        /* un padding más pequeño */
-    font-size: 0.9rem;         /* texto un poco más pequeño en móvil */
-    white-space: normal;       /* PERMITE que el texto salte de línea */
-    word-wrap: break-word;     /* en caso de palabras largas, que se ajusten */
-    text-align: center;        /* centramos el texto */
+    display: inline-block;      
+    max-width: 90%;            
+    padding: 10px 15px;        
+    font-size: 0.9rem;         
+    white-space: normal;       
+    word-wrap: break-word;     
+    text-align: center;        
   }
 }
