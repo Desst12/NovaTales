@@ -1,12 +1,32 @@
-body {
-  margin: 0;
-  padding-top: 80px; 
-  font-family: 'Montserrat', sans-serif;
-  background-color: #0e0d1b;
-  color: #f3f3f3;
+/* ================================
+   VARIABLES GLOBALES
+=================================== */
+:root {
+  --color-primary: #d4af37;
+  --color-primary-hover: #b8942c;
+  --color-text: #f3f3f3;
+  --color-bg: #0e0d1b;
+
+  --color-futurista-primary: #00f0ff;
+  --color-futurista-hover: #00c0ff;
+  --color-futurista-bg: #050d1a;
+  --color-futurista-card: rgba(0,255,255,0.05);
+
+  --font-medieval: 'Cinzel Decorative', cursive;
+  --font-default: 'Montserrat', sans-serif;
+  --font-futurista: 'Orbitron', sans-serif;
 }
 
+/* Base */
+body {
+  margin: 0;
+  padding-top: 80px;
+  font-family: var(--font-default);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
 
+/*  Header */
 header {
   position: fixed;
   top: 0;
@@ -17,8 +37,8 @@ header {
 }
 
 header .header-container {
-  max-width: 1200px;      
-  margin: 0 auto;         
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,9 +46,9 @@ header .header-container {
 }
 
 .logo {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: var(--font-medieval);
   font-size: 1.8rem;
-  color: #d4af37; 
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -44,19 +64,19 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #f3f3f3;
+  color: var(--color-text);
   font-weight: 600;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #d4af37;
+  color: var(--color-primary);
 }
 
-/* Seccion principal */
-
+/* HERO */
 .hero {
   background: url("../Images/fondo-hero.png") no-repeat center;
+  background-size: cover;
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -65,9 +85,9 @@ nav a:hover {
 }
 
 .hero-content h1 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: var(--font-medieval);
   font-size: 3rem;
-  color: #d4af37;
+  color: var(--color-primary);
   margin-bottom: 10px;
 }
 
@@ -78,7 +98,7 @@ nav a:hover {
 
 /* Botón principal */
 .cta-btn {
-  background-color: #d4af37;
+  background-color: var(--color-primary);
   padding: 12px 25px;
   color: #fff;
   text-decoration: none;
@@ -88,18 +108,16 @@ nav a:hover {
   position: relative;
   animation: brillo 2s infinite alternate;
 }
-
 .cta-btn:hover {
-  background-color: #b8942c;
+  background-color: var(--color-primary-hover);
 }
 
-/* Animación para el brillo */
 @keyframes brillo {
   from {
     box-shadow: 0 0 10px #050d1a, 0 0 20px #050d1a;
   }
   to {
-    box-shadow: 0 0 20px #d4af37, 0 0 40px #d4af37;
+    box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary);
   }
 }
 
@@ -110,27 +128,19 @@ section {
 }
 
 section h2 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: var(--font-medieval);
   font-size: 2rem;
-  color: #d4af37;
+  color: var(--color-primary);
   margin-bottom: 40px;
   animation: subir 1s ease-out;
 }
 
-/* Animación de titulo */
 @keyframes subir {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Portafolio */
-
 .portfolio-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,14 +159,12 @@ section h2 {
   border-radius: 8px;
 }
 
-/* Efecto de sombra */
 .portfolio .item:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 20px #d4af37
+  box-shadow: 0 0 20px var(--color-primary);
 }
 
 /* Servicios */
-
 .service-items {
   display: flex;
   flex-wrap: wrap;
@@ -172,7 +180,6 @@ section h2 {
 }
 
 /* Blog */
-
 .blog-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -185,9 +192,7 @@ section h2 {
   border-radius: 10px;
 }
 
-
 /* Footer */
-
 footer {
   text-align: center;
   padding: 30px 10px;
@@ -199,36 +204,33 @@ footer a {
   text-decoration: none;
   font-weight: 600;
 }
-
 footer a:hover {
   text-decoration: underline;
 }
 
-/* Estilo 2 */
-
+/* Modo futurista */
 body.futurista {
-  background-color: #050d1a;
+  background-color: var(--color-futurista-bg);
   color: #e0f7ff;
-  font-family: 'Orbitron', sans-serif; 
+  font-family: var(--font-futurista);
   transition: all 0.5s ease-in-out;
 }
 
 body.futurista .logo {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-futurista);
   font-size: 1.8rem;
-  color: #00f0ff;
+  color: var(--color-futurista-primary);
 }
 
 body.futurista nav a:hover {
-     color: #00c0ff;
-  }
+  color: var(--color-futurista-hover);
+}
 
-/* Títulos */
 body.futurista h1,
 body.futurista h2,
 body.futurista h3 {
-  font-family: 'Orbitron', sans-serif; 
-  color: #00f0ff; 
+  font-family: var(--font-futurista);
+  color: var(--color-futurista-primary);
 }
 
 body.futurista .hero {
@@ -236,64 +238,63 @@ body.futurista .hero {
 }
 
 body.futurista .hero-content h1 {
-  color: #00f0ff;
+  color: var(--color-futurista-primary);
 }
 
-body.futurista .service h3 {
-  color: #00f0ff; 
-}
-
-body.futurista .portfolio .item h3 {
-  color: #00f0ff;
-}
-
+body.futurista .service h3,
+body.futurista .portfolio .item h3,
 body.futurista .blog article h3 {
-  color: #00f0ff;
+  color: var(--color-futurista-primary);
 }
 
 body.futurista header {
   background-color: rgba(0, 255, 255, 0.1);
 }
 
-/* Botón */
 body.futurista .cta-btn {
-  background-color: #00f0ff;
+  background-color: var(--color-futurista-primary);
   color: #050d1a;
   animation: glowFuturo 2s infinite alternate;
 }
 
 @keyframes glowFuturo {
   from {
-    box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    box-shadow: 0 0 10px var(--color-futurista-primary), 0 0 20px var(--color-futurista-primary);
   }
   to {
     box-shadow: 0 0 20px #ff00d4, 0 0 40px #ff00d4;
   }
 }
 
-/* Tarjetas */
 body.futurista .portfolio .item,
 body.futurista .service,
 body.futurista .blog article {
-  background-color: rgba(0,255,255,0.05);
+  background-color: var(--color-futurista-card);
 }
 
 body.futurista .portfolio .item:hover {
   box-shadow: 0 0 20px #00f0ff88;
 }
 
-/* Footer */
 body.futurista footer {
   background-color: rgba(0, 255, 255, 0.1);
 }
 body.futurista footer a {
-  color: #00f0ff;
+  color: var(--color-futurista-primary);
 }
 
-/* Botón de cambio de tema */
+body.futurista #switch-theme {
+  background-color: var(--color-futurista-primary);
+  color: #050d1a;
+}
+body.futurista #switch-theme:hover {
+  background-color: var(--color-futurista-hover);
+}
+
+/* Boton para cambio de estilo */
 #switch-theme {
-  background-color: #d4af37;
-  color: #0e0d1b;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -302,77 +303,51 @@ body.futurista footer a {
   transition: background-color 0.3s;
   margin-left: 20px;
 }
-
 #switch-theme:hover {
-  background-color: #b8942c;
+  background-color: var(--color-primary-hover);
 }
 
-/* En modo futurista, el botón se ve distinto */
-body.futurista #switch-theme {
-  background-color: #00f0ff;
-  color: #050d1a;
-}
-body.futurista #switch-theme:hover {
-  background-color: #00c0ff;
-}
-
-
-/* Responsive design*/
-
+/* Diseño responsivo */
 @media (max-width: 768px) {
-  /* Header como columna */
-  header {
+  /* Header en columna */
+  header .header-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 15px 10px;
-    background-color: rgba(0,0,0,0.85);
     gap: 20px;
   }
 
-  /* Logo y texto centrados */
   .logo {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px; 
-  }
-
-  .logo-text {
-    font-size: 1.3rem;
-    line-height: 1.2;
-    text-align: center;
+    font-size: 1.6rem; 
   }
 
   nav ul {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; 
-    margin: 0;
-    padding: 0;
+    gap: 12px;
   }
 
   nav ul li a {
     font-size: 1rem;
   }
 
-  /* Botón de cambio de tema separado */
-  
   #switch-theme {
     margin-top: 12px;
   }
-}
 
-@media (max-width: 768px) {
+ 
   .cta-btn {
-    display: inline-block;      
-    max-width: 90%;            
-    padding: 10px 15px;        
-    font-size: 0.9rem;         
-    white-space: normal;       
-    word-wrap: break-word;     
-    text-align: center;        
+    display: inline-block;
+    max-width: 90%;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  .hero {
+    height: 70vh;
   }
 }
